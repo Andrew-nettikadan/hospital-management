@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DS MEDICITY</title>
+  <style>
+
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #0d1a4d;
+    }
+
+    main {
+      flex: 1; 
+    }
+
+    header {
+      padding: 15px 25px;
+      background: #0d47a1;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #979ea6;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    .logo:hover {
+      color: #ffca28;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e3f2fd;
+      font-weight: bold;
+      margin-left: 20px;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffeb3b;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 30px 15px;
+    }
+
+    .side-image {
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+      width: 250px;
+      margin: 0;
+    }
+
+    .content-info {
+      background-color: #ffffff;
+      margin: 0 5px;
+      padding: 30px 40px;
+      max-width: 900px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .content-info h1 {
+      color: #0d47a1;
+      margin-bottom: 20px;
+    }
+
+    
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #1565c0;
+      color: white;
+      font-size: 14px;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25);
+      margin-top: auto; 
+    }
+
+    marquee {
+      font-weight: bold;
+    }
+
+ 
+    @media (max-width: 768px) {
+      body {
+        padding: 0 10px;
+      }
+      header {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav {
+        margin-top: 10px;
+      }
+      .main-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .side-image {
+        width: 90%;
+        margin-bottom: 20px;
+      }
+    
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="Main1.html" style="text-decoration:none; color:white;">
+      <div class="logo">DS MEDICITY</div>
+    </a>
+    <nav>
+      <a href="registration1.html">REGISTRATION</a>
+      <a href="appointment1.html">APPOINTMENT</a>
+      <a href="departments1.html">DEPARTMENTS</a>
+      <a href="s.html">SERVICES</a>
+      <a href="location1.html">LOCATIONS</a>
+      <a href="gallery1.html">GALLERY</a>
+      <a href="CONTACT1.html">CONTACT</a>
+      <a href="lo.html">LOG OUT</a>
+    </nav>
+  </header>
+
+    <div class="main-container">
+      <img src="C:\Users\andre\Downloads\lo.jpeg" class="side-image">
+
+      <div class="content-info">
+        <h1>LOCATIONS</h1>
+        <hr style="border:1px solid #ccc; width:80%;">
+     
+        <hr style="border:1px solid #ccc; width:80%;">
+        <ol>
+<H2>
+<h2>INDIRA NAGAR<br>
+KORAMANGALA<br>
+JAYANAGER<br>
+WHITEFIELD<br>
+BTM LAYOUT<br>
+HSR LAYOUT<br>
+SARJAPUR<br>
+MARATHAHALLI<br>
+BOMMASANDRA<br>
+KENGERI<br>
+YESWANTHPUR<br>
+<hr style="border:1px solid grey;">
+<h1>Reach out</h1>
+<br>
+<br>
+<center>
+<script>
+    function myMap() {
+      var mapProp = {
+        center: new google.maps.LatLng(51.508742, -0.120850),
+        zoom: 5,
+      };
+      var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+    }
+  </script>
+
+  <script async defer 
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=myMap">
+  </script>
+
+
+  <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.5558789579018!2d77.60361387403228!3d12.936241415654624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15b277a93807%3A0x88518f37b39dabd0!2sChrist%20University!5e0!3m2!1sen!2sin!4v1733818175649!5m2!1sen!2sin" 
+    width="600" 
+    height="450" 
+    style="border:0;" 
+    allowfullscreen 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+
+      </div>
+
+
+      <img src="C:\Users\andre\Downloads\locations.jpeg" class="side-image" alt="Hospital Image">
+    </div>
+  </main>
+
+  <footer>
+    <marquee>© 2025 DS Medicity. All rights reserved.</marquee>
+  </footer>
+
+</body>
+</html>

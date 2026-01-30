@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DS MEDICITY</title>
+  <style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #1a237e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    padding: 15px 25px;
+    background: #0d47a1;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #979ea6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  .logo:hover {
+    color: #ffca28;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+
+  nav a {
+    margin: 10px;
+    text-decoration: none;
+    color: #e3f2fd;
+    font-weight: bold;
+  }
+
+  nav a:hover {
+    color: #ffca28;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+  .appointment-section {
+    width: 80%;
+    max-width: 700px;
+    margin: 60px auto;
+    background-color: #e3f2fd;
+    padding: 25px 35px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-grow: 1;
+  }
+
+  .appointment-section h3 {
+    text-align: center;
+    color: #0d47a1;
+    margin-bottom: 20px;
+  }
+
+  .appointment-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .appointment-section input,
+  .appointment-section select,
+  .appointment-section textarea {
+    padding: 10px;
+    border: 1px solid #90caf9;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  .appointment-section input:focus,
+  .appointment-section select:focus,
+  .appointment-section textarea:focus {
+    outline: none;
+    border-color: #0d47a1;
+    box-shadow: 0 0 5px rgba(13,71,161,0.3);
+  }
+
+  .appointment-section button {
+    background-color: #1a53a8;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+  
+  }
+
+  .appointment-section button:hover {
+    background-color: #1565c0;
+    color: #ffca28;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  }
+
+  footer {
+    text-align: center;
+    padding: 15px;
+    background: linear-gradient(to right, #1565c0, #42a5f5);
+    color: white;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25);
+  }
+
+  marquee {
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .appointment-section {
+      width: 90%;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="Main1.html" class="logo">DS MEDICITY</a>
+  <nav>
+    <a href="registration1.html">REGISTRATION</a>
+    <a href="appointment1.html">APPOINTMENT</a>
+    <a href="departments1.html">DEPARTMENTS</a>
+    <a href="s.html">SERVICES</a>
+    <a href="location1.html">LOCATIONS</a>
+    <a href="gallery1.html">GALLERY</a>
+    <a href="CONTACT1.html">CONTACT</a>
+    <a href="lo.html">LOG OUT</a>
+  </nav>
+</header>
+
+<div class="appointment-section">
+  <h3><u>BOOK AN APPOINTMENT</u></h3>
+  <form action="#" method="post">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+    <select name="department" required>
+      <option value="">Select Department</option>
+      <option>Cardiology</option>
+      <option>Neurology</option>
+      <option>Orthopaedics</option>
+      <option>Gynaecology</option>
+      <option>Pediatrics</option>
+      <option>General Surgery</option>
+    </select>
+    <input type="date" name="date" required>
+    <textarea name="message" rows="3" placeholder="Describe your issue or concern"></textarea>
+    <button type="submit">BOOK NOW</button>
+  </form>
+</div>
+
+<footer>
+  <marquee>© 2025 DS Medicity. All rights reserved.</marquee>
+</footer>
+
+</body>
+</html>

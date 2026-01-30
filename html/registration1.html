@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DS MEDICITY</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #1a237e;
+      cursor: crosshair;
+    }
+
+    header {
+      padding: 15px 25px;
+      background: #0d47a1;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #979ea6;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .logo:hover {
+      color: #ffca28;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    nav a {
+      margin: 10px;
+      text-decoration: none;
+      color: #e3f2fd;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #ffca28;
+      text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+    }
+
+    h3 {
+      text-align: center;
+      color: #0d47a1;
+    }
+
+    .box {
+      background-color: #e3f2fd;
+      width: 80%;
+      max-width: 600px;
+      padding: 20px 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      color: #003366;
+    }
+
+    input[type="text"], input[type="email"], textarea {
+      width: 100%;
+      margin-top: 8px;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+      font-family: inherit;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      background-color: #ffffff;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      width: 150px;
+      height: 40px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: background-color 0.3s;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #0056b3;
+      color: #ffca28;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: linear-gradient(to right, #1565c0, #42a5f5);
+      color: white;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="Main1.html" class="logo">DS MEDICITY</a>
+  <nav>
+    <a href="registration1.html">REGISTRATION</a>
+    <a href="appointment1.html">APPOINTMENT</a>
+    <a href="departments1.html">DEPARTMENTS</a>
+    <a href="s.html">SERVICES</a>
+    <a href="location1.html">LOCATIONS</a>
+    <a href="gallery1.html">GALLERY</a>
+    <a href="CONTACT1.html">CONTACT</a>
+    <a href="lo.html">LOG OUT</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div class="box">
+    <h3><u>REGISTRATION</u></h3>
+    <form id="re">
+      <label>NAME:</label>
+      <input type="text" name="name" required>
+
+      <label>AGE:</label>
+      <input type="text" name="age" required>
+
+      <label>EMAIL:</label>
+      <input type="email" name="email" required>
+
+      <div style="text-align:center;">
+        <input type="reset" value="RESET">
+        <input type="submit" value="SUBMIT">
+      </div>
+    </form>
+  </div>
+  <div class="box">
+    <h3><u>FEEDBACK</u></h3>
+    <form id="feed">
+      <textarea name="COMMENTS" placeholder="Write your feedback here..." required></textarea>
+      <div style="text-align:center;">
+        <input type="submit" value="SUBMIT">
+      </div>
+    </form>
+  </div>
+
+</div>
+
+<footer>
+  <marquee>© 2025 DS Medicity. All rights reserved.</marquee>
+</footer>
+
+<script>
+
+document.getElementById("re").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  var name = this.name.value;
+  var age = this.age.value;
+  var email = this.email.value;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "register.php", true);
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+      if (xhr.status == 200) alert("Registration Successful!");
+      else alert("Error " + xhr.status);
+    }
+  };
+
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("name=" + name + "&age=" + age + "&email=" + email);
+});
+
+
+
+document.getElementById("feed").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  var comments = this.COMMENTS.value;
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "feedback.php", true);
+
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState == 4) {
+
+      if (xhr.status == 200) alert("Feedback Submitted!");
+      else if (xhr.status == 404) alert("File Not Found (404)");
+      else if (xhr.status == 500) alert("Server Error (500)");
+      else if (xhr.status == 403) alert("Forbidden (403)");
+      else alert("Error: " + xhr.status);
+
+    }
+  };
+
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.send("COMMENTS=" + comments);
+});
+let timer;
+
+function resetTimer() {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    alert("Session Expired! You were inactive.");
+    document.getElementById("re").reset();
+  }, 10000);
+}
+
+let regForm = document.getElementById("re");
+regForm.addEventListener("input", resetTimer);
+regForm.addEventListener("click", resetTimer);
+resetTimer();
+
+</script>
+
+</body>
+</html>
