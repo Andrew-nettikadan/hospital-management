@@ -1,0 +1,92 @@
+[
+  {
+    "pid": 201,
+    "name": "Rahul Sharma",
+    "department": "Cardiology",
+    "doctor": "Dr. Meta",
+    "fees": 1500,
+    "admitDate": "2024-05-12",
+    "age": 45
+  },
+  {
+    "pid": 202,
+    "name": "Anita Verma",
+    "department": "Neurology",
+    "doctor": "Dr. Singh",
+    "fees": 2200,
+    "admitDate": "2024-06-20",
+    "age": 38
+  },
+  {
+    "pid": 203,
+    "name": "Suresh Kumar",
+    "department": "Orthopedics",
+    "doctor": "Dr. Rao",
+    "fees": 1800,
+    "admitDate": "2024-07-01",
+    "age": 52
+  },
+  {
+    "pid": 204,
+    "name": "Pooja Nair",
+    "department": "ENT",
+    "doctor": "Dr. Lakshmi",
+    "fees": 1600,
+    "admitDate": "2024-05-28",
+    "age": 30
+  },
+  {
+    "pid": 205,
+    "name": "Amit Patel",
+    "department": "Dermatology",
+    "doctor": "Dr. Shah",
+    "fees": 1200,
+    "admitDate": "2024-06-10",
+    "age": 28
+  },
+  {
+    "pid": 206,
+    "name": "Neha Gupta",
+    "department": "Pediatrics",
+    "doctor": "Dr. Arora",
+    "fees": 1400,
+    "admitDate": "2024-07-05",
+    "age": 6
+  },
+  {
+    "pid": 207,
+    "name": "Ramesh Iyer",
+    "department": "ENT",
+    "doctor": "Dr. Menon",
+    "fees": 1300,
+    "admitDate": "2024-05-18",
+    "age": 50
+  },
+  {
+    "pid": 208,
+    "name": "Kavya Reddy",
+    "department": "Ophthalmology",
+    "doctor": "Dr. Prasad",
+    "fees": 1700,
+    "admitDate": "2024-06-25",
+    "age": 34
+  },
+  {
+    "pid": 209,
+    "name": "Vikram Singh",
+    "department": "General Medicine",
+    "doctor": "Dr. Khanna",
+    "fees": 1000,
+    "admitDate": "2024-07-08",
+    "age": 41
+  },
+  {
+    "pid": 210,
+    "name": "Sneha Joshi",
+    "department": "Psychiatry",
+    "doctor": "Dr. Deshpande",
+    "fees": 2000,
+    "admitDate": "2024-07-12",
+    "age": 29
+  }
+]

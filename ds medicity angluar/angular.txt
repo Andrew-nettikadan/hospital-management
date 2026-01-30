@@ -1,0 +1,1 @@
+ds medicity  website shows the patients names which we can filter the names and department for searching,also has the mouse events and some ng events

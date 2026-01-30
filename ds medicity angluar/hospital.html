@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hospital Management System</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background:white
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0a6d73;
+      margin-bottom: 20px;
+    }
+
+    .search-box {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"] {
+      width: 230px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      outline: none;
+      margin-right: 10px;
+    }
+
+    input[type="text"]:focus {
+      border-color: #0a6d73;
+      box-shadow: 0 0 5px rgba(10, 109, 115, 0.4);
+    }
+
+    button {
+      padding: 8px 14px;
+      background-color: #0a6d73;
+      color: #ffffff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #084f54;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table th {
+      background-color: #0a6d73;
+      color: #ffffff;
+      padding: 10px;
+      text-align: left;
+    }
+
+    table td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table tr:hover {
+      background-color: #f1fafa;
+    }
+
+    p {
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body ng-app="hospitalApp" ng-controller="hospitalCtrl">
+
+<div class="container">
+
+  <h2>Hospital Patient Details</h2>
+
+  <div class="search-box">
+    
+
+    <input type="text"
+           placeholder="Search by Name"
+           ng-model="searchName"
+           ng-focus="focusMsg()"
+           ng-blur="blurMsg()">
+    <input type="text"
+           placeholder="Search by Department"
+           ng-model="searchDept"
+           ng-focus="focusMsg()"
+           ng-blur="blurMsg()">
+    
+    <button ng-click="clearSearch()">Clear Search</button>
+  </div>
+
+  <p>{{status}}</p>
+
+  <table>
+    <tr>
+      <th>Patient ID</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Doctor</th>
+      <th>Fees</th>
+      <th>Admit Date</th>
+      <th>Age</th>
+    </tr>
+
+    <tr ng-repeat="p in patients 
+                   | filter:{department:searchDept} 
+                   | filter:{name:searchName}"
+        ng-mouseenter="mouseIn()"
+        ng-mouseleave="mouseOut()">
+
+      <td>{{p.pid | number}}</td>
+      <td>{{p.name | uppercase}}</td>
+      <td>{{p.department | lowercase}}</td>
+      <td>{{p.doctor}}</td>
+      <td>{{p.fees | currency:'₹'}}</td>
+      <td>{{p.admitDate | date:'dd-MM-yyyy'}}</td>
+      <td>{{p.age}}</td>
+    </tr>
+  </table>
+
+  <p>{{mouseStatus}}</p>
+
+</div>
+
+<script>
+  var app = angular.module("hospitalApp", []);
+
+  app.controller("hospitalCtrl", function($scope, $http) {
+
+    $http.get("patients.json").then(function(response) {
+      $scope.patients = response.data;
+    });
+
+  
+    $scope.focusMsg = function() {
+      $scope.status = "Search box focused";
+    };
+
+
+    $scope.blurMsg = function() {
+      $scope.status = "Search box lost focus";
+    };
+
+
+    $scope.clearSearch = function() {
+      $scope.searchDept = "";
+      $scope.searchName = "";
+    };
+
+  
+    $scope.mouseIn = function() {
+      $scope.mouseStatus = "Mouse entered patient row";
+    };
+
+    $scope.mouseOut = function() {
+      $scope.mouseStatus = "Mouse left patient row";
+    };
+
+  });
+</script>
+
+</body>
+</html>
